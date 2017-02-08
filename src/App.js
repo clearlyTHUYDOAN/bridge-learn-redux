@@ -8,11 +8,11 @@ import { GET_ALL_POKEMON_URL } from './constants/api-url';
 
 //https://img.pokemondb.net/artwork/${pokemon}.jpg <-- use for pictures
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => ({ // Returns overall state. Connects state to application.
   pokemon: state.pokemon.list,
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps = { // Allows access for actions. Connects functions/actions to Redux.
   favouritePokemon,
   getPokemon
 };
@@ -39,7 +39,12 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App); 
+// Connect function at the bottom comes from Redux. It connects our application to Redux. 
+// Very important. Everything goes through it.
+
+
+
 
 // NOTES:
 
