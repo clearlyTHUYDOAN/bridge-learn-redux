@@ -1,12 +1,37 @@
-export const ACTION_TYPES = {
-  addProduct: 'ADD_PRODUCT',
-}
+import $ from 'jquery';
 
-export function addProduct(product) {
+import {GET_ALL_POKEMON_URL} from '../constants/api-url';
+
+
+export const ACTION_TYPES = {
+  favouritePokemon: 'FAVOURITE_POKEMON',
+  setPokemon: 'SET_POKEMON'
+};
+
+export function favouritePokemon(pokemon) {
   return {
-    type: ACTION_TYPES.addProduct,
+    type: ACTION_TYPES.favouritePokemon,
     payload: {
-      product,
+      pokemon,
     }
   }
+}
+
+
+export function getPokemon() {
+
+
+  return function (dispatch) {
+    $.get(GET_ALL_POKEMON_URL)
+      .then(response => {
+        dispatch({
+          type: ACTION_TYPES.setPokemon,
+          payload: {
+            pokemon: response.results
+          }
+        })
+      });
+
+  };
+
 }
