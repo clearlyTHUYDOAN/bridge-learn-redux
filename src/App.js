@@ -42,6 +42,7 @@ class App extends Component {
 export default connect(mapStateToProps, mapDispatchToProps)(App); 
 // Connect function at the bottom comes from Redux. It connects our application to Redux. 
 // Very important. Everything goes through it.
+// It does not modify the component class passed to it; instead, it returns a new, connected component class for you to use.
 
 
 

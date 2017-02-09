@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   favouritePokemon: null
 };
 
-export const pokemon = (state = INITIAL_STATE, {type, payload}) => {
+export const pokemon = (state = INITIAL_STATE, {type, payload}) => { // this is a reducer. gets exported to reducers/index.js
 
   switch (type) {
     case ACTION_TYPES.favouritePokemon:
