@@ -9,7 +9,7 @@ import {PokemonView} from './components/pokemon-view';
 //https://img.pokemondb.net/artwork/${pokemon}.jpg <-- use for pictures
 
 const mapStateToProps = state => ({ // Returns overall state. Connects state to application.
-  pokemon: state.pokemon.list,
+  pokemon: state.pokemon.list, // Q. Do we just call this what we want? A. Does list come from the initial state property? 
 });
 
 const mapDispatchToProps = { // Allows access for actions. Connects functions/actions to Redux.
@@ -18,14 +18,15 @@ const mapDispatchToProps = { // Allows access for actions. Connects functions/ac
 };
 
 class App extends Component { // This is the main (parent) component. 
-  componentDidMount() {
-    this.props.getPokemon();
-    console.log(this.props.getPokemon);
+  componentWillMount() { // Delay in displaying?
+    this.props.getPokemon(); // This runs the getPokemon action. Reducer listens for the action, takes in the state, returns new state.
   }
 
   render() {
 
-    const { pokemon } = this.props; // destructuring
+    const { pokemon } = this.props; // ES6 destructuring ... Q. This is pokemon: state.pokemon.list?
+    console.log(pokemon); // Starts as empty and then when getPokemon's results return, updates state, re-renders. 
+
     return (
 
       <div>
@@ -96,9 +97,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 // 
 // 4) sinon is useful for spy oriented stuff. functions are hard to test. often ... you don't want to know what the function
 // results into, you actually want to know it's meta data. sinon lets you wrap or create a fake function with that info for you.
-// 
-// 
-//
-// 
-// 
-//
