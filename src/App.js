@@ -19,7 +19,7 @@ const mapDispatchToProps = { // Allows access for actions. Connects functions/ac
 
 class App extends Component { // This is the main (parent) component. 
   componentWillMount() { // Delay in displaying?
-    this.props.getPokemon(); // This runs the getPokemon action. Reducer listens for the action, takes in the state, returns new state.
+    // this.props.getPokemon(); // This runs the getPokemon action. Reducer listens for the action, takes in the state, returns new state.
   }
 
   render() {
