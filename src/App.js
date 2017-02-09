@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import React, { Component } from 'react'; 
+import { connect } from 'react-redux' // Connect function at the bottom comes from Redux. It connects our application to Redux. 
 import { favouritePokemon, getPokemon } from './actions';
 
 import {PokemonView} from './components/pokemon-view';
 
-import { GET_ALL_POKEMON_URL } from './constants/api-url';
+// import { GET_ALL_POKEMON_URL } from './constants/api-url';
 
 //https://img.pokemondb.net/artwork/${pokemon}.jpg <-- use for pictures
 
@@ -17,14 +17,15 @@ const mapDispatchToProps = { // Allows access for actions. Connects functions/ac
   getPokemon
 };
 
-class App extends Component {
+class App extends Component { // This is the main (parent) component. 
   componentDidMount() {
     this.props.getPokemon();
+    console.log(this.props.getPokemon);
   }
 
   render() {
 
-    const { pokemon, favouritePokemon } = this.props; // go over destructuring again
+    const { pokemon } = this.props; // destructuring
     return (
 
       <div>

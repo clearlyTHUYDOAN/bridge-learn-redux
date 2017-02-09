@@ -8,3 +8,4 @@ export default combineReducers({
 });
 
 // Combine reducers combines all reducers into one single object.
+// Reducers take in the current state and an action and returns a new state. 
