@@ -1,6 +1,7 @@
 import React from 'react';
 
-export const PokemonView = ({pokeData, favourite}) => <div style={{width: '80vw', marginLeft: 'auto'}}>
+// Dumb component. 
+export const PokemonView = ({pokeData, favourite}) => <div style={{width: '80vw', marginLeft: 'auto'}}> 
 
   <h2>{pokeData.name}</h2>
 
@@ -9,3 +10,5 @@ export const PokemonView = ({pokeData, favourite}) => <div style={{width: '80vw'
   <button onClick={() => favourite(pokeData.name)}>Save as favourite</button>
 
 </div>;
+
+// Gets imported by App.js

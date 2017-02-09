@@ -1,5 +1,6 @@
 import {ACTION_TYPES} from "../actions/index";
 
+// The reducer below takes in the initial state, an action (consists of type, payload) and returns a new state.
 
 const INITIAL_STATE = {
   list: [],
