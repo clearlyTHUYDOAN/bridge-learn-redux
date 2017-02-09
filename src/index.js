@@ -13,15 +13,19 @@ import App from './App';
 import './index.css';
 import reducer from './reducers';
 
+// createStore creates a Redux store that holds the complete state tree of your app.
+// There should only be a single store in your app.
+
 const store = createStore(reducer, 
   applyMiddleware(thunk), // this is how thunk is integrated into the redux library
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()); // what's this'
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()); // what's this?
 
 // The store is made by the function createStore (imported from Redux). It's passed the "reducer". 
 // A function combines all the reducers and that is passed into createStore. 
 
 // Provider makes the Redux store available to the connect() calls in the component hierarchy below. 
 // Normally, you can’t use connect() without wrapping the root component in <Provider>.
+// If using react-router, put Provider on the outermost level, outside the router. 
 
 ReactDOM.render(
   <Provider store={ store }>
